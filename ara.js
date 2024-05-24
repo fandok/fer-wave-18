@@ -1,0 +1,1 @@
+console.log("izin ya mba ara")
