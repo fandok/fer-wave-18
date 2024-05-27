@@ -1,0 +1,32 @@
+body {
+  margin: 0px;
+}
+
+.hero {
+  background-color: #f1f3ff;
+  padding-top: 24px;
+  padding-left: 136px;
+  padding-right: 136px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blue-block {
+  width: 100px;
+  height: 34px;
+  background-color: #0d28a6;
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+}
+
+.menu-item {
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 20px;
+}
