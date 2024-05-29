@@ -1,0 +1,58 @@
+html {
+  font-size: 30px;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+.teks {
+  font-size: 30px;
+}
+
+/* default fontsize 16px; */
+div {
+  font-size: 24px;
+}
+
+div > strong {
+  font-size: 2em;
+  /* font-size: 32px; */
+}
+
+div > small {
+  font-size: 0.5em;
+  /* font-size: 8px */
+}
+
+div > strong,
+div > small {
+  display: block;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    background-color: green;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: red;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .teks {
+    font-size: 50px;
+  }
+
+  .teks-kedua {
+    font-weight: 700;
+    font-size: 100px;
+  }
+}
