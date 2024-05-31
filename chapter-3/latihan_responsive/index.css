@@ -2,6 +2,7 @@ body {
   font-family: Arial;
   color: #000;
   font-weight: 700;
+  margin: 0px;
 }
 
 .service-container {
@@ -43,6 +44,12 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 360px;
+  }
+
   .service-container {
     margin-top: 60px;
     margin-left: 16px;
@@ -73,9 +80,7 @@ body {
 
 .faq-container {
   display: flex;
-  margin-top: 100px;
-  margin-left: 136px;
-  margin-right: 136px;
+  margin: 100px 136px 150px;
   justify-content: space-between;
 }
 
@@ -96,4 +101,26 @@ body {
   border-radius: 4px;
   margin-bottom: 16px;
   width: 668px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .faq-container {
+    display: block;
+    margin: 40px 0px 60px;
+  }
+
+  .faq-title {
+    text-align: center;
+  }
+
+  .faq-desc {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .faq-question {
+    width: initial;
+  }
 }
