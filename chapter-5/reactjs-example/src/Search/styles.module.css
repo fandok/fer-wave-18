@@ -1,0 +1,23 @@
+.search {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding: 46px 24px 24px;
+  box-shadow: 0px 0px 10px 0px #00000026;
+  border-radius: 8px;
+  margin: 196px;
+  align-items: flex-end;
+}
+
+.button {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #fff;
+  background-color: #5cb85f;
+  border: none;
+  padding: 8px 12px;
+  width: 92px;
+  height: 38px;
+}
