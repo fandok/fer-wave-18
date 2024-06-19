@@ -1,5 +1,5 @@
-import Footer from "./Footer";
+import Search from "./Search";
 
-const CariMobil = () => <Footer />;
+const CariMobil = () => <Search />;
 
 export default CariMobil;

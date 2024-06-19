@@ -1,0 +1,25 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: Rubik;
+  width: 208px;
+  position: relative;
+  padding: 0px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  position: absolute;
+  top: -18px;
+}
+
+.input {
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  border: 1px solid #cccccc;
+}
