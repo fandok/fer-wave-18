@@ -7,9 +7,7 @@ import iconMail from "/icons/icon-mail.png";
 import iconTwitch from "/icons/icon-twitch.png";
 import { ADDRESS, EMAIL, MENU } from "../constants";
 
-const IconImage = ({ source, text, width = 50 }) => (
-  <img width={width} src={source} alt={text} height={width} />
-);
+const IconImage = ({ source, text }) => <img src={source} alt={text} />;
 
 const Footer = () => {
   return (
@@ -27,10 +25,10 @@ const Footer = () => {
       <div className="item bold">
         <div>Connect with us</div>
         <div className="icons">
-          <IconImage source={iconFacebook} text="facebook" width={100} />
-          <IconImage source={iconInstagram} text="instagram" width={80} />
-          <IconImage source={iconTwitter} text="twitter" width={60} />
-          <IconImage source={iconMail} text="mail" width={40} />
+          <IconImage source={iconFacebook} text="facebook" />
+          <IconImage source={iconInstagram} text="instagram" />
+          <IconImage source={iconTwitter} text="twitter" />
+          <IconImage source={iconMail} text="mail" />
           <IconImage source={iconTwitch} text="twitch" />
         </div>
       </div>
