@@ -1,15 +1,7 @@
-body {
-  margin: 150px 0px 0px;
-  font-size: 14px;
-  line-height: 20px;
-  font-family: Arial;
-}
-
 .container {
   display: flex;
   justify-content: space-between;
-  margin-left: 136px;
-  margin-right: 136px;
+  margin: 152px 173px 100px;
 }
 
 .item {
