@@ -1,78 +1,71 @@
+import { useEffect, useState } from "react";
 import Footer from "../Footer";
 import Header from "../Header";
 import Search from "../Search";
 import styles from "./styles.module.css";
+import { ACCESS_TOKEN, CATEGORY_LIST, DETAIL_URL } from "../constants";
+import Description from "./Description";
 
-const Detail = () => (
-  <>
-    <div className={styles.hero}>
-      <Header />
-      <div className={styles.search}>
-        <Search />
-      </div>
-    </div>
-    <div className={styles.content}>
-      <div className={styles["content-description"]}>
-        <div className={styles["description-title"]}>Tentang Paket</div>
-        <div className={styles["description-title"]}>Include</div>
-        <ul className={styles["description-list"]}>
-          <li>Apa saja yang termasuk dalam paket misal durasi max 12 jam</li>
-          <li>Sudah termasuk bensin selama 12 jam</li>
-          <li>Sudah termasuk Tiket Wisata</li>
-          <li>Sudah termasuk pajak</li>
-        </ul>
-        <div className={styles["description-title"]}>Exclude</div>
-        <ul className={styles["description-list"]}>
-          <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-          <li>
-            Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-            20.000/jam
-          </li>
-          <li>Tidak termasuk akomodasi penginapan</li>
-        </ul>
-        <div className={styles["description-title"]}>
-          Refund, Reschedule, Overtime
+const Detail = () => {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(DETAIL_URL, {
+        headers: {
+          access_token: ACCESS_TOKEN,
+        },
+      });
+
+      const responseData = await response.json();
+      setData(responseData);
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <>
+      <div className={styles.hero}>
+        <Header />
+        <div className={styles.search}>
+          <Search />
         </div>
-        <ul className={styles["description-list"]}>
-          <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-          <li>
-            Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-            20.000/jam
-          </li>
-          <li>Tidak termasuk akomodasi penginapan</li>
-          <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-          <li>
-            Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-            20.000/jam
-          </li>
-          <li>Tidak termasuk akomodasi penginapan</li>
-          <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
-          <li>
-            Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp
-            20.000/jam
-          </li>
-          <li>Tidak termasuk akomodasi penginapan</li>
-        </ul>
       </div>
-      <div className={styles["content-info"]}>
-        <img className={styles["info-image"]} src="/car.png" alt="car" />
-        <div className={styles["info-name"]}>Innova</div>
-        <div style={{ marginBottom: 55 }}>
+      <div className={styles.content}>
+        <Description />
+        <div className={styles["content-info"]}>
           <img
-            style={{ marginRight: 4 }}
-            alt="people"
-            src="/icons/icon-people.svg"
+            width={270}
+            height={160}
+            className={styles["info-image"]}
+            src={data.image}
+            alt="car"
           />
-          <span>6 - 8 orang</span>
-        </div>
-        <div className={styles["info-total"]}>
-          <span>Total</span>
-          <span>Rp 500.000</span>
+          <div className={styles["info-name"]}>{data.name}</div>
+          <div style={{ marginBottom: 55 }}>
+            <img
+              style={{ marginRight: 4 }}
+              alt="people"
+              src="/icons/icon-people.svg"
+            />
+            <span>{CATEGORY_LIST[data.category]}</span>
+          </div>
+          <div className={styles["info-total"]}>
+            <span>Total</span>
+            <span>
+              {new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                maximumSignificantDigits: 1,
+              }).format(data.price)}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <Footer />
-  </>
-);
+      <Footer />
+    </>
+  );
+};
 
 export default Detail;
