@@ -16,3 +16,37 @@
   font-size: 14px;
   line-height: 20px;
 }
+
+.menu {
+  display: none;
+}
+
+.offcanvas {
+  width: 180px !important;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.offcanvasHeader {
+  font-weight: 700;
+}
+
+.offcanvasBody {
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    align-items: center;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .menu {
+    display: initial;
+    cursor: pointer;
+  }
+}
