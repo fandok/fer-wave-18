@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Offcanvas, OffcanvasBody, OffcanvasHeader } from "reactstrap";
 import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,9 @@ const Header = () => {
   return (
     <>
       <div className={styles.header}>
-        <div className={styles.block} />
+        <Link to="/">
+          <div className={styles.block} />
+        </Link>
         <div className={styles.navigation}>
           <div>Our Services</div>
           <div>Why Us</div>
