@@ -5,24 +5,28 @@ import Search from "../Search";
 import styles from "./styles.module.css";
 import { ACCESS_TOKEN, CATEGORY_LIST, DETAIL_URL } from "../constants";
 import Description from "./Description";
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
+  const params = useParams();
   const [data, setData] = useState({});
+
+  const id = params.id;
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(DETAIL_URL, {
+      const response = await fetch(DETAIL_URL + id, {
         headers: {
           access_token: ACCESS_TOKEN,
         },
       });
 
       const responseData = await response.json();
-      setData(responseData);
+      setData(responseData || {});
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -39,7 +43,7 @@ const Detail = () => {
             width={270}
             height={160}
             className={styles["info-image"]}
-            src={data.image}
+            src={data?.image}
             alt="car"
           />
           <div className={styles["info-name"]}>{data.name}</div>
