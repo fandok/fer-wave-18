@@ -8,6 +8,13 @@ export const CATEGORY_LIST = {
   large: "6 - 8 orang",
 };
 
+export const PRICE_OPTION = {
+  small: { minPrice: 0, maxPrice: 400000 },
+  medium: { minPrice: 400000, maxPrice: 600000 },
+  large: { minPrice: 600000, maxPrice: 0 },
+};
+
+export const LIST_URL = "https://api-car-rental.binaracademy.org/admin/v2/car";
 export const DETAIL_URL = "https://api-car-rental.binaracademy.org/admin/car/";
 
 export const ACCESS_TOKEN =
