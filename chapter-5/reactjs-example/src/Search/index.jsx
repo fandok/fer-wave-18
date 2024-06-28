@@ -1,12 +1,18 @@
 import styles from "./styles.module.css";
 import { PRICE_OPTION } from "../constants";
 
-const Search = ({ formInput, setFormInput, handleSearch }) => {
+const Search = ({
+  isDisabled = false,
+  formInput = {},
+  setFormInput,
+  handleSearch,
+}) => {
   return (
     <div className={styles.search}>
       <div className={styles.item}>
         <div className={styles.label}>Nama Mobil</div>
         <input
+          disabled={isDisabled}
           onChange={(e) => {
             setFormInput({
               ...formInput,
@@ -21,6 +27,7 @@ const Search = ({ formInput, setFormInput, handleSearch }) => {
       <div className={styles.item}>
         <div className={styles.label}>Kategori</div>
         <select
+          disabled={isDisabled}
           value={formInput.category}
           onChange={(e) => {
             setFormInput({
@@ -41,6 +48,7 @@ const Search = ({ formInput, setFormInput, handleSearch }) => {
       <div className={styles.item}>
         <div className={styles.label}>Harga</div>
         <select
+          disabled={isDisabled}
           onChange={(e) => {
             setFormInput({
               ...formInput,
@@ -61,6 +69,7 @@ const Search = ({ formInput, setFormInput, handleSearch }) => {
       <div className={styles.item}>
         <div className={styles.label}>Status</div>
         <select
+          disabled={isDisabled}
           onChange={(e) => {
             setFormInput({
               ...formInput,
@@ -74,7 +83,11 @@ const Search = ({ formInput, setFormInput, handleSearch }) => {
           <option value="">Tidak Disewa</option>
         </select>
       </div>
-      <button onClick={handleSearch} className={styles.button}>
+      <button
+        disabled={isDisabled}
+        onClick={handleSearch}
+        className={styles.button}
+      >
         Cari Mobil
       </button>
     </div>

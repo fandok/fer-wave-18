@@ -1,0 +1,56 @@
+.carouselContainer {
+  font-family: Arial;
+  margin: 100px 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.testimonialTitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.testimonialDesc {
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.carousel {
+  margin-bottom: 24px;
+}
+
+.carouselItem {
+  padding: 69px 32px;
+  background-color: #f1f3ff;
+  box-shadow: 0px 0px 4px 0px #00000026;
+  border-radius: 8px;
+  display: flex;
+  gap: 46px;
+  align-items: center;
+  width: 619px;
+  margin: 0 auto;
+}
+
+.itemStars {
+  margin-bottom: 8px;
+}
+
+.itemQuotes {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.carouselPagination {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.paginationButton {
+  cursor: pointer;
+}

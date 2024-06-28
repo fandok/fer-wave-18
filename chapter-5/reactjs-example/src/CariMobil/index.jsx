@@ -3,7 +3,8 @@ import Search from "../Search";
 import Footer from "../Footer";
 import styles from "./styles.module.css";
 import { useState } from "react";
-import { ACCESS_TOKEN, LIST_URL } from "../constants";
+import { ACCESS_TOKEN, LIST_URL, PLACEHOLDER_URL } from "../constants";
+import { Link } from "react-router-dom";
 
 const CariMobil = () => {
   const [carList, setCarList] = useState([]);
@@ -46,7 +47,11 @@ const CariMobil = () => {
       <div className={styles.cars}>
         {carList.map((car) => (
           <div key={car.id} className={styles.carItem}>
-            <img className={styles.carImage} src={car.image} alt={car.name} />
+            <img
+              className={styles.carImage}
+              src={car.image ? car.image : PLACEHOLDER_URL}
+              alt={car.name}
+            />
             <div className={styles.carName}>{car.name}</div>
             <div className={styles.carPrice}>
               {new Intl.NumberFormat("id-ID", {
@@ -60,7 +65,9 @@ const CariMobil = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
-            <button className={styles.carButton}>Pilih Mobil</button>
+            <Link to={`/detail/${car.id}`}>
+              <button className={styles.carButton}> Pilih Mobil</button>
+            </Link>
           </div>
         ))}
       </div>

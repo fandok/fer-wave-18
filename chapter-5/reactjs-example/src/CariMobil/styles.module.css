@@ -47,12 +47,11 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;
-  color: #fff;
   padding: 14px 107px;
   background-color: #5cb85f;
   border: none;
+  color: #fff;
 }
-
 .cars {
   margin: 40px 196px;
   display: flex;
