@@ -1,4 +1,15 @@
 import styles from "./styles.module.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { useRef } from "react";
+
+const SETTINGS = {
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+};
 
 const CarouselItem = ({ woman = false }) => (
   <div className={styles.carouselItem}>
@@ -18,30 +29,49 @@ const CarouselItem = ({ woman = false }) => (
   </div>
 );
 
-const Carousel = () => (
-  <div className={styles.carouselContainer}>
-    <div className={styles.testimonialTitle}>Testimonial</div>
-    <div className={styles.testimonialDesc}>
-      Berbagai review positif dari para pelanggan kami
+const Carousel = () => {
+  let sliderRef = useRef(null);
+
+  const next = () => {
+    sliderRef.slickNext();
+  };
+  const previous = () => {
+    sliderRef.slickPrev();
+  };
+
+  return (
+    <div className={styles.carouselContainer}>
+      <div className={styles.testimonialTitle}>Testimonial</div>
+      <div className={styles.testimonialDesc}>
+        Berbagai review positif dari para pelanggan kami
+      </div>
+      <Slider
+        {...SETTINGS}
+        className={styles.carousel}
+        ref={(slider) => {
+          sliderRef = slider;
+        }}
+      >
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem woman />
+      </Slider>
+      <div className={styles.carouselPagination}>
+        <img
+          onClick={previous}
+          className={styles.paginationButton}
+          src="/left.png"
+          alt="left-button"
+        />
+        <img
+          onClick={next}
+          className={styles.paginationButton}
+          src="/right.png"
+          alt="right-button"
+        />
+      </div>
     </div>
-    <div className={styles.carousel}>
-      <CarouselItem />
-      <CarouselItem />
-      <CarouselItem woman />
-    </div>
-    <div className={styles.carouselPagination}>
-      <img
-        className={styles.paginationButton}
-        src="/left.png"
-        alt="left-button"
-      />
-      <img
-        className={styles.paginationButton}
-        src="/right.png"
-        alt="right-button"
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 export default Carousel;

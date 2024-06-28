@@ -3,7 +3,12 @@ import Footer from "../Footer";
 import Header from "../Header";
 import Search from "../Search";
 import styles from "./styles.module.css";
-import { ACCESS_TOKEN, CATEGORY_LIST, DETAIL_URL } from "../constants";
+import {
+  ACCESS_TOKEN,
+  CATEGORY_LIST,
+  DETAIL_URL,
+  PLACEHOLDER_URL,
+} from "../constants";
 import Description from "./Description";
 import { useParams } from "react-router-dom";
 
@@ -33,7 +38,7 @@ const Detail = () => {
       <div className={styles.hero}>
         <Header />
         <div className={styles.search}>
-          <Search />
+          <Search isDisabled />
         </div>
       </div>
       <div className={styles.content}>
@@ -43,7 +48,7 @@ const Detail = () => {
             width={270}
             height={160}
             className={styles["info-image"]}
-            src={data?.image}
+            src={data.image ? data.image : PLACEHOLDER_URL}
             alt="car"
           />
           <div className={styles["info-name"]}>{data.name}</div>

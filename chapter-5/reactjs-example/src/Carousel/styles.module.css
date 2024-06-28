@@ -21,9 +21,6 @@
 }
 
 .carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 32px;
   margin-bottom: 24px;
 }
 
@@ -35,6 +32,8 @@
   display: flex;
   gap: 46px;
   align-items: center;
+  width: 619px;
+  margin: 0 auto;
 }
 
 .itemStars {

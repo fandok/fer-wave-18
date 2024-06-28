@@ -19,3 +19,5 @@ export const DETAIL_URL = "https://api-car-rental.binaracademy.org/admin/car/";
 
 export const ACCESS_TOKEN =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGJjci5pbyIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2NTI0MjUwOX0.ZTx8L1MqJ4Az8KzoeYU2S614EQPnqk6Owv03PUSnkzc";
+
+export const PLACEHOLDER_URL = "https://placehold.co/270x160";
